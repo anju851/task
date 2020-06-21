@@ -37,12 +37,73 @@
         -->
         <link rel="prefetch" type="application/l10n" href="data/locales.ini" />
         <script type="text/javascript" src="js/libs/l10n.js" defer></script>
+        
+        
+        <style>
+.btn {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.success {background-color: green;} /* Green */
+.success:hover {background-color:green;} 
+
+.danger {background-color: red;} /* Red */ 
+.danger:hover {background: red;} 
+.rectangle {
+  height: 50px;
+  width: 150px;
+  background-color: #555;
+  margin-left: 50px;
+}
+div {
+  border: 2px solid;
+  padding: 20px; 
+  width: 300px;
+  overflow: auto;
+}
+round {
+  border: 2px solid ;
+  border-radius: 5px;
+}
+</style>
+        
+
     </head>
     <body>
         <section>
             <h1 data-l10n-id="app_title">Privileged empty app</h1>
             <p data-l10n-id="app_description">This app is empty. Fill it with your own stuff!</p>
             <p id="message"></p>
+            
+            
+            <div>
+<div id="redBox" class="rectangle" style="background-color:red"></div> <br><br>
+<div id="greenBox" class="rectangle" style="background-color:green"></div> <br><br>
+<br>
+
+<button type="button" id="green" class="success" style="float:right">Show</button>
+<button type="button" id="red" class="danger" style="float:left"> Show</button>
+
+<script type="text/javascript"> 
+    document.getElementById("red").onclick = function() { 
+
+        document.getElementById("greenBox").style.display = "none"; 
+
+        document.getElementById("redBox").style.display = "block"; 
+    } 
+
+    document.getElementById("green").onclick = function() { 
+
+        document.getElementById("redBox").style.display = "none"; 
+        document.getElementById("greenBox").style.display = "block";
+
+    } 
+</script>
+
+</div>
         </section>
     </body>
 </html>
