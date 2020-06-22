@@ -44,5 +44,102 @@
             <p data-l10n-id="app_description">This app is empty. Fill it with your own stuff!</p>
             <p id="message"></p>
         </section>
+        
+        
+        
+        
+         <!-- for carousel -->
+        <div class="slideshow-container">
+
+             <!-- for navbar -->
+            <nav class="navbar" id="navID">
+                <button type="button" onclick="myFunc(this)" class="toggle-collapse" id="toggle-button">
+                 <span class="toggle-icon"></span>
+                </button>
+             
+                <ul class="side-nav">
+                    
+                    <li class="nav-item">
+                       <a href="#" class="nav-link">User Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#" class="nav-link">Settings</a>
+                     </li> 
+                     
+                </ul>
+            </nav>
+
+<!-- .....................................      -->
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="Media/lunch.jpg" style="width:100% ; height:30%">
+              <div class="text">Caption Text</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="Media/pasta.jpg" style="width:100% ; height:30%">
+              <div class="text">Caption Two</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="Media/fishCurry.jpg" style="width:100% ; height:30%">
+              <div class="text">Caption Three</div>
+            </div>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+            
+            <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+            </script>
+
+
+<!-- for navbar -->
+        <script>
+        function myFunc(e){
+             e.classList.toggle("show");
+
+             var elem=document.getElementById("navID"),
+             Style = window.getComputedStyle(elem),
+             left=Style.getPropertyValue("left");
+             if(left =="0px"){
+                 elem.style.left = "-260px";
+             }
+             else{
+                 elem.style.left="0px";
+             }
+        }
+
+       </script>
     </body>
 </html>
